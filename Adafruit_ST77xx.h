@@ -32,9 +32,9 @@
 #include <Adafruit_SPITFT_Macros.h>
 
 #define ST7735_TFTWIDTH_128   128 // for 1.44 and mini
-#define ST7735_TFTWIDTH_80     80 // for mini
+#define ST7735_TFTWIDTH_80     82 // for mini
 #define ST7735_TFTHEIGHT_128  128 // for 1.44" display
-#define ST7735_TFTHEIGHT_160  160 // for 1.8" and mini display
+#define ST7735_TFTHEIGHT_160  161 // for 1.8" and mini display
 
 #define ST_CMD_DELAY      0x80    // special signifier for command lists
 
@@ -77,13 +77,16 @@
 // Some ready-made 16-bit ('565') color settings:
 #define	ST77XX_BLACK      0x0000
 #define ST77XX_WHITE      0xFFFF
-#define	ST77XX_RED        0xF800
+#define	ST77XX_RED        0x001F
 #define	ST77XX_GREEN      0x07E0
-#define	ST77XX_BLUE       0x001F
-#define ST77XX_CYAN       0x07FF
+#define	ST77XX_BLUE       0xF800
+#define ST77XX_CYAN       0xFFE0
 #define ST77XX_MAGENTA    0xF81F
-#define ST77XX_YELLOW     0xFFE0
-#define	ST77XX_ORANGE     0xFC00
+#define ST77XX_YELLOW     0x07FF
+#define	ST77XX_ORANGE     0x01FF
+#define ST77XX_OFFWHITE   0xCA7F
+#define ST77XX_REDISHWHITE     0x3048
+
 
 /// Subclass of SPITFT for ST77xx displays (lots in common!)
 class Adafruit_ST77xx : public Adafruit_SPITFT {
